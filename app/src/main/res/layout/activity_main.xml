@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  activity_main.xml  ≡  index.html                           ║
+    ║  Rôle : Écran d'accueil — Vue principale de l'application.  ║
+    ║         Chargé par MainActivity.java via setContentView().  ║
+    ║         Analogie : c'est le "body" de votre page HTML.      ║
+    ╚══════════════════════════════════════════════════════════════╝
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5F7FA"
+    tools:context=".MainActivity">
+
+    <!-- En-tête / Hero section (≡ <header> HTML) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#1565C0"
+        android:padding="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🎓"
+            android:textSize="48sp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WebAppSync"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestion des étudiants"
+            android:textSize="15sp"
+            android:textColor="#90CAF9"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+    <!-- Corps / Main content (≡ <main> HTML) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <!-- Bouton navigation vers AddEtudiant (≡ <a href="/etudiant/add">) -->
+        <Button
+            android:id="@+id/btnAjouter"
+            style="@style/btnPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="➕  Ajouter un étudiant" />
+
+        <!-- Bouton liste (pour extension future) -->
+        <Button
+            android:id="@+id/btnListe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📋  Voir la liste"
+            android:backgroundTint="#1565C0"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:layout_marginTop="12dp"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+</LinearLayout>

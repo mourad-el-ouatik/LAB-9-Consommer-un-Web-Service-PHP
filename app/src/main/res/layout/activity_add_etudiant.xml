@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  activity_add_etudiant.xml  ≡  form.html                    ║
+    ║  Rôle : Formulaire d'ajout d'étudiant.                      ║
+    ║         Chargé par AddEtudiant.java via setContentView().   ║
+    ║                                                              ║
+    ║  ANALOGIE CHAMP PAR CHAMP :                                 ║
+    ║    TextView  → <label>                                       ║
+    ║    EditText  → <input type="text">                           ║
+    ║    Spinner   → <select> (liste déroulante)                   ║
+    ║    RadioGroup→ <input type="radio">                          ║
+    ║    Button    → <button type="submit">                        ║
+    ╚══════════════════════════════════════════════════════════════╝
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    tools:context=".AddEtudiant">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- En-tête de la page (≡ <header> de la page form.html) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1565C0"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="➕"
+                android:textSize="22sp"
+                android:layout_marginEnd="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ajouter un étudiant"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Carte formulaire (≡ <form> HTML) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="#FFFFFF"
+            android:layout_margin="16dp"
+            android:elevation="4dp">
+
+            <!-- ── NOM ── (≡ <label>Nom</label> + <input type="text" name="nom">) -->
+            <TextView
+                android:text="Nom"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/nom"
+                style="@style/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ex : Alaoui"
+                android:inputType="textPersonName" />
+
+            <!-- ── PRÉNOM ── (≡ <input type="text" name="prenom">) -->
+            <TextView
+                android:text="Prénom"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/prenom"
+                style="@style/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ex : Mohamed"
+                android:inputType="textPersonName" />
+
+            <!-- ── VILLE ── (≡ <select name="ville"> ... </select>) -->
+            <TextView
+                android:text="Ville"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Spinner
+                android:id="@+id/ville"
+                android:entries="@array/villes"
+                style="@style/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- ── SEXE ── (≡ <input type="radio" name="sexe">) -->
+            <TextView
+                android:text="Sexe"
+                style="@style/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:id="@+id/sexeGroup"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <RadioButton
+                    android:id="@+id/m"
+                    android:text="Homme"
+                    android:textColor="#212121"
+                    android:buttonTint="#1565C0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp" />
+
+                <RadioButton
+                    android:id="@+id/f"
+                    android:text="Femme"
+                    android:textColor="#212121"
+                    android:buttonTint="#1565C0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RadioGroup>
+
+            <!-- Séparateur (≡ <hr> HTML) -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp" />
+
+            <!-- ── BOUTON SUBMIT ── (≡ <button type="submit">Ajouter</button>) -->
+            <Button
+                android:id="@+id/add"
+                style="@style/btnPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✔  Enregistrer l'étudiant" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

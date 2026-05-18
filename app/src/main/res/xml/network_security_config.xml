@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  network_security_config.xml  ≡  .htaccess / CORS config    ║
+    ║  Rôle : Définit les règles de sécurité réseau de l'app.     ║
+    ║         Ici, on autorise HTTP (non-HTTPS) vers le serveur   ║
+    ║         PHP local de l'émulateur Android.                   ║
+    ╚══════════════════════════════════════════════════════════════╝
+
+    ANALOGIE :
+    - En web, .htaccess ou CORS headers contrôlent quels domaines
+      peuvent accéder à vos ressources.
+    - Ici, on autorise explicitement le trafic cleartext vers
+      10.0.2.2 (= localhost de la machine hôte vu depuis l'émulateur).
+-->
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!--
+            10.0.2.2 = adresse spéciale de l'émulateur Android
+            qui pointe vers localhost (127.0.0.1) de votre PC.
+            includeSubdomains="true" couvre tous les sous-domaines.
+        -->
+        <domain includeSubdomains="true">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>
